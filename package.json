@@ -7,9 +7,27 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "D3$TR0YER",
-  "license": "MIT",
-  "description": "",
+  "license": "Unlicense",
+  "description": "<p>Um analisador de GSC.</p> <p>O objetivo deste projeto é conseguir criar um analisador completo de GSC, focado, mas não limitado, a versão usada no jogo <strong>Black Ops 2(T6)</strong>.</p> <p>No futuro também pretendo criar um interpretador GSC.</p>",
   "dependencies": {
     "chevrotain": "^11.0.3"
-  }
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gustavo10Destroyer/gsc-analyzer.git"
+  },
+  "keywords": [
+    "gsc",
+    "parser",
+    "lexer",
+    "analyzer"
+  ],
+  "bugs": {
+    "url": "https://github.com/Gustavo10Destroyer/gsc-analyzer/issues"
+  },
+  "homepage": "https://github.com/Gustavo10Destroyer/gsc-analyzer#readme"
 }
