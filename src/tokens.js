@@ -42,8 +42,8 @@ export const Not = createToken({
   categories: LogicOperator
 });
 
-export const Equal = createToken({
-  name: "Equal",
+export const EqualEqual = createToken({
+  name: "EqualEqual",
   pattern: /==/,
   categories: LogicOperator
 });
@@ -94,6 +94,18 @@ export const BAnd = createToken({
 export const BOr = createToken({
   name: "BOr",
   pattern: /\|/,
+  categories: BitwiseOperator
+});
+
+export const BXor = createToken({
+  name: "BXor",
+  pattern: /\^/,
+  categories: BitwiseOperator
+});
+
+export const BNot = createToken({
+  name: "BNot",
+  pattern: /~/,
   categories: BitwiseOperator
 });
 // -------------------------
@@ -244,21 +256,171 @@ export const StringLiteral = createToken({
 });
 // ----------------
 
+// --- Arithmetic operators ---
+export const ArithmeticOperator = createToken({
+  name: "ArithmeticOperator",
+  pattern: Lexer.NA
+});
+
+export const Add = createToken({
+  name: "Add",
+  pattern: /\+/,
+  categories: ArithmeticOperator
+});
+
+export const Subtract = createToken({
+  name: "Subtract",
+  pattern: /\-/,
+  categories: ArithmeticOperator
+});
+
+export const Multiply = createToken({
+  name: "Multiply",
+  pattern: /\*/,
+  categories: ArithmeticOperator
+});
+
+export const Divide = createToken({
+  name: "Divide",
+  pattern: /\//,
+  categories: ArithmeticOperator
+});
+
+export const Modulo = createToken({
+  name: "Modulo",
+  pattern: /%/,
+  categories: ArithmeticOperator
+});
+
+export const Increment = createToken({
+  name: "Increment",
+  pattern: /\+\+/,
+  categories: ArithmeticOperator
+});
+
+export const Decrement = createToken({
+  name: "Decrement",
+  pattern: /--/,
+  categories: ArithmeticOperator
+});
+// ----------------------------
+
+// --- Assignment operators ---
+export const AssignmentOperator = createToken({
+  name: "AssignmentOperator",
+  pattern: Lexer.NA
+});
+
+export const Assign = createToken({
+  name: "Assign",
+  pattern: /=/,
+  categories: AssignmentOperator
+});
+
+export const AddAssign = createToken({
+  name: "AddAssign",
+  pattern: /\+=/,
+  categories: AssignmentOperator
+});
+
+export const SubtractAssign = createToken({
+  name: "SubtractAssign",
+  pattern: /-=/,
+  categories: AssignmentOperator
+});
+
+export const MultiplyAssign = createToken({
+  name: "MultiplyAssign",
+  pattern: /\*=/,
+  categories: AssignmentOperator
+});
+
+export const DivideAssign = createToken({
+  name: "DivideAssign",
+  pattern: /\*=/,
+  categories: AssignmentOperator
+});
+
+export const ModuloAssign = createToken({
+  name: "ModuloAssign",
+  pattern: /%=/,
+  categories: AssignmentOperator
+});
+
+export const BAndAssign = createToken({
+  name: "BAndAssign",
+  pattern: /&=/,
+  categories: AssignmentOperator
+});
+
+export const BOrAssign = createToken({
+  name: "BOrAssign",
+  pattern: /\|=/,
+  categories: AssignmentOperator
+});
+
+export const BXorAssign = createToken({
+  name: "BXorAssign",
+  pattern: /\^=/,
+  categories: AssignmentOperator
+});
+
+export const BNotAssign = createToken({
+  name: "BNotAssign",
+  pattern: /~=/,
+  categories: AssignmentOperator
+});
+
+export const LeftShiftAssign = createToken({
+  name: "LeftShiftAssign",
+  pattern: /<<=/,
+  categories: AssignmentOperator
+});
+
+export const RightShiftAssign = createToken({
+  name: "RightShiftAssign",
+  pattern: />>=/,
+  categories: AssignmentOperator
+});
+// ----------------------------
+
+export const Identifier = createToken({
+  name: "Identifier",
+  pattern: /[a-zA-Z_]\w*/
+});
+
 export const allTokens = [
   WhiteSpace,
+  EqualEqual,
+  NotEqual,
+  Not,
+  And,
+  Or,
+  BAndAssign,
+  BOrAssign,
+  BXorAssign,
+  BNotAssign,
+  LeftShiftAssign,
+  RightShiftAssign,
   LeftShift,
   RightShift,
   LessThanEq,
   GreaterThanEq,
   LessThan,
   GreaterThan,
-  Equal,
-  NotEqual,
-  Not,
-  And,
-  Or,
   BAnd,
   BOr,
+  BXor,
+  BNot,
+  AddAssign,
+  Assign,
+  Add,
+  Increment,
+  Decrement,
+  Subtract,
+  Multiply,
+  Divide,
+  Modulo,
   IfStatement,
   ElseStatement,
   SwitchStatement,
@@ -281,8 +443,11 @@ export const allTokens = [
   Integer,
   LogicOperator,
   BitwiseOperator,
+  ArithmeticOperator,
+  AssignmentOperator,
   Statement,
   Delimiter,
   NumberLiteral,
-  StringLiteral
+  StringLiteral,
+  Identifier
 ];
