@@ -1,7 +1,7 @@
 import { Lexer } from "chevrotain";
 import { allTokens } from "./tokens.js";
 
-export default class LogicLexer extends Lexer {
+export default class GSCLexer extends Lexer {
   constructor() {
     super(allTokens);
   }
