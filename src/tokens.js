@@ -254,6 +254,12 @@ export const StringLiteral = createToken({
   name: "StringLiteral",
   pattern: /"[^"]*"/
 });
+
+// Example of a path: maps\mp\zombies\_zm_perks
+export const PathLiteral = createToken({
+  name: "PathLiteral",
+  pattern: /[a-zA-Z0-9_]+\\(?:[a-zA-Z0-9_]+\\)*[a-zA-Z0-9_]+/
+})
 // ----------------
 
 // --- Arithmetic operators ---
@@ -384,6 +390,44 @@ export const RightShiftAssign = createToken({
 });
 // ----------------------------
 
+// --- Comments ---
+export const Comment = createToken({
+  name: "Comment",
+  pattern: Lexer.NA
+});
+
+export const LineComment = createToken({
+  name: "LineComment",
+  pattern: /\/\/.*/,
+  categories: Comment
+});
+
+export const BlockComment = createToken({
+  name: "BlockComment",
+  pattern: /\/\*[\s\S]*?\*\//,
+  categories: Comment
+});
+// ---------------
+
+// --- Directives ---
+export const Directive = createToken({
+  name: "Directive",
+  pattern: Lexer.NA
+});
+
+export const Include = createToken({
+  name: "Include",
+  pattern: /#include/,
+  categories: Directive
+});
+
+export const Define = createToken({
+  name: "Define",
+  pattern: /#define/,
+  categories: Directive
+});
+// ------------------
+
 export const Identifier = createToken({
   name: "Identifier",
   pattern: /[a-zA-Z_]\w*/
@@ -391,6 +435,13 @@ export const Identifier = createToken({
 
 export const allTokens = [
   WhiteSpace,
+  Comment,
+  LineComment,
+  BlockComment,
+  Directive,
+  Include,
+  Define,
+  PathLiteral,
   EqualEqual,
   NotEqual,
   Not,
