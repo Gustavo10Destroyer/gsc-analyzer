@@ -1,4 +1,5 @@
-if("str1" <= "str2")
+init()
 {
-  return;
+  nickname = "D3$TR0YER";
+  print(nickname);
 }
