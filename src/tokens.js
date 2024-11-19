@@ -255,6 +255,11 @@ export const StringLiteral = createToken({
   pattern: /"[^"]*"/
 });
 
+export const IStringLiteral = createToken({
+  name: "IStringLiteral",
+  pattern: /&"[^"]*"/
+});
+
 // Example of a path: maps\mp\zombies\_zm_perks
 export const PathLiteral = createToken({
   name: "PathLiteral",
@@ -459,6 +464,7 @@ export const allTokens = [
   GreaterThanEq,
   LessThan,
   GreaterThan,
+  IStringLiteral,
   BAnd,
   BOr,
   BXor,

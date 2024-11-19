@@ -1,5 +1,7 @@
 #include maps\mp\zombies\_zm_perks;
 
+#define PERK_NAME &"My Perk"
+
 init()
 {
   /*
